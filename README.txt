@@ -1,5 +1,9 @@
 Django tutorial from https://developer.mozilla.org/en-US/docs/Learn/Server-side/Django/skeleton_website
 
+Things I added:
+"""'Language Model Challenge'"""
+    # Added a row to show what language the book was written in
+
 
 ---
 

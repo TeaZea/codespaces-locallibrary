@@ -27,6 +27,9 @@ class Book(models.Model):
     # Genre class has already been defined so we can specify the object above.
     genre = models.ManyToManyField(Genre, help_text='Select a genre for this book')
 
+    # Added a row to show what language the book was written in.
+    language = models.CharField(max_length=50)
+
     def __str__(self):
         """String for representing the Model object."""
         return self.title
