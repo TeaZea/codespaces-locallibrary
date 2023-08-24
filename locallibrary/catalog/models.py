@@ -27,9 +27,6 @@ class Book(models.Model):
     # Genre class has already been defined so we can specify the object above.
     genre = models.ManyToManyField(Genre, help_text='Select a genre for this book')
 
-    # Added a row to show what language the book was written in.
-    language = models.CharField(max_length=50, default='English')
-
     def __str__(self):
         """String for representing the Model object."""
         return self.title
@@ -39,6 +36,14 @@ class Book(models.Model):
         return reverse('book-detail', args=[str(self.id)])
 
 
+class Language(models.Model):
+    """Added a model to show what language a book was written in."""
+    language = models.CharField(max_length=50, default='English')
+
+    def __str__(self):
+        return self.language
+    
+    
 class BookInstance(models.Model):
     """Model representing a specific copy of a book (i.e. that can be borrowed from the library)."""
     id = models.UUIDField(primary_key=True, default=uuid.uuid4, help_text='Unique ID for this particular book across whole library')

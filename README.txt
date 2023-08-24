@@ -20,3 +20,5 @@ Add app to settings.py
 Add imports and paths to urlpatterns in url.py in main folder
 Create url.py in app folder and add imports
 Run server to see if it works - navigate to /admin/ to ensure it does
+Add models
+Add models you made into admin.py
