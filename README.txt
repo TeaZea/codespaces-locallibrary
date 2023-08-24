@@ -2,9 +2,10 @@ Django tutorial from https://developer.mozilla.org/en-US/docs/Learn/Server-side/
 
 Things I added:
 """'Language Model Challenge'"""
-    # Added a row to show what language the book was written in
+    # Added a model.Language, with a row in the model.Books.
 
-
+admin
+111I111I1
 ---
 
 Step-by-Step Setup Notes

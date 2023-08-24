@@ -12,6 +12,14 @@ class Genre(models.Model):
         return self.name
 
 
+class Language(models.Model):
+    """Added a model to show what language a book was written in."""
+    language = models.CharField(max_length=50, default='English')
+
+    def __str__(self):
+        return self.language
+ 
+
 class Book(models.Model):
     """Model representing a book (but not a specific copy of a book)."""
     title = models.CharField(max_length=200)
@@ -26,6 +34,7 @@ class Book(models.Model):
     # ManyToManyField used because genre can contain many books. Books can cover many genres.
     # Genre class has already been defined so we can specify the object above.
     genre = models.ManyToManyField(Genre, help_text='Select a genre for this book')
+    language = models.ManyToManyField(Language, max_length=50, default='English', help_text='Select the language this book was written in')
 
     def __str__(self):
         """String for representing the Model object."""
@@ -35,14 +44,6 @@ class Book(models.Model):
         """Returns the URL to access a detail record for this book."""
         return reverse('book-detail', args=[str(self.id)])
 
-
-class Language(models.Model):
-    """Added a model to show what language a book was written in."""
-    language = models.CharField(max_length=50, default='English')
-
-    def __str__(self):
-        return self.language
-    
     
 class BookInstance(models.Model):
     """Model representing a specific copy of a book (i.e. that can be borrowed from the library)."""
