@@ -31,6 +31,8 @@ class BookAdmin(admin.ModelAdmin):
 class BookInstanceAdmin(admin.ModelAdmin):
     list_filter = ('status', 'due_back')
 
+    list_display = ('book', 'status', 'due_back', 'id')
+
     # Changes the sections of the view in admin
     fieldsets = (
         (None, {

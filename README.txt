@@ -1,8 +1,9 @@
 Django tutorial from https://developer.mozilla.org/en-US/docs/Learn/Server-side/Django/skeleton_website
 
 Things I added:
-"""'Language Model Challenge'"""
     # Added a model.Language, with a row in the model.Books so it can populate model.Language simultaniously.
+    # Used list_displays under admin.BookInstance to show more than just name.
+    # Added inline listing of Book items to the Author detail view.
 
 
 ---
