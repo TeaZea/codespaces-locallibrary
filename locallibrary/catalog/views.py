@@ -14,6 +14,15 @@ def index(request):
     # The 'all()' is implied by default.
     num_authors = Author.objects.count()
 
+    # counts for genres and books with a particular word
+    def bookSearch(question):
+        bookquery = Book.objects.filter(book__name__icontains=(question))
+        return bookquery
+    
+    def genreSearch(question):
+        genrequery = Genre.object.filter(genre__name__icontains=(question))
+        return genrequery
+
     context = {
         'num_books': num_books,
         'num_instances': num_instances,
