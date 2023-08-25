@@ -25,5 +25,9 @@ Create url.py in app folder and add imports
 Run server to see if it works - navigate to /admin/ to ensure it does
 Add models
 Add models you made into admin.py
-Change the way the models are viewed in /admin/ by creating objects and registering them to the imported .models
-
+Change the way the models are viewed in /admin/ by creating objects and registering them to the imported .models if need be
+Create views in view.py of app
+Create template folder in app
+Create index html template
+Extend index.html to other templates
+Path urls properly in url.py(s)
