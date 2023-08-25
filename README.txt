@@ -27,7 +27,8 @@ Add models
 Add models you made into admin.py
 Change the way the models are viewed in /admin/ by creating objects and registering them to the imported .models if need be
 Create views in view.py of app
-Create template folder in app
+Create template folder in app - THIS IS WHERE YOUR HTML GOES
+Create static folder in app - THIS IS WHERE LOCAL CSS GOES
 Create index html template
 Extend index.html to other templates
 Path urls properly in url.py(s)
