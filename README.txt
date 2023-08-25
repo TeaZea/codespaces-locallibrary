@@ -30,5 +30,5 @@ Create views in view.py of app
 Create template folder in app - THIS IS WHERE YOUR HTML GOES
 Create static folder in app - THIS IS WHERE LOCAL CSS GOES
 Create index html template
-Extend index.html to other templates
+Extend index.html to other apps if need be
 Path urls properly in url.py(s)
