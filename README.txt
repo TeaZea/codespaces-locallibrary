@@ -4,7 +4,7 @@ Things I added:
     # Added a model.Language, with a row in the model.Books so it can populate model.Language simultaniously.
     # Used list_displays under admin.BookInstance to show more than just name.
     # Added inline listing of Book items to the Author detail view.
-
+    # Added new block title on the index.html, seperate from base.html
 
 ---
 111I111I1
@@ -29,6 +29,6 @@ Change the way the models are viewed in /admin/ by creating objects and register
 Create views in view.py of app
 Create template folder in app - THIS IS WHERE YOUR HTML GOES
 Create static folder in app - THIS IS WHERE LOCAL CSS GOES
-Create index html template
-Extend index.html to other apps if need be
+Create base.html template
+Extend to index.html and/or other apps if need be
 Path urls properly in url.py(s)
