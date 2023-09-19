@@ -1,0 +1,23 @@
+{% extends "base_generic.html" %}
+
+{% block content %}
+  <h1>Full Name: {{ author.first_name }} {{ author.last_name }}</h1>
+
+  <p><strong>First Name:</strong> <a href="">{{ author.first_name }}</a></p>
+  <p><strong>Last Name:</strong> {{ author.last_name }}</p>
+  <p><strong>Birth:</strong> {{ author.date_of_birth }}</p>
+  <p><strong>Death:</strong> {{ author.date_of_death }}</p>
+
+  <div style="margin-left:20px;margin-top:20px">
+    <h4>Books</h4>
+
+    <!-- Need for loop to iterate through books and show the books that the author wrote wit the description. The name will link to the books page. -->
+    <!-- {% for book in book.bookinstance_set.all %}
+      <hr />
+      <p>
+        {{ book.BookInstance.book }}
+      </p>
+    {% endfor %}
+  </div> -->
+
+{% endblock %}
