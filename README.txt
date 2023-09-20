@@ -6,7 +6,7 @@ Things I added:
     # Added inline listing of Book items to the Author detail view.
     # Added new block title on the index.html, seperate from base.html
     # Added Genre count on catalog page, index.html, view.py
-    # Added author_detail.html and auther_list.html
+    # Added author_detail.html and author_list.html
 ---
 111I111I1
 ---
