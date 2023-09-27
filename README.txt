@@ -10,7 +10,11 @@ Things I added:
     # Added author_detail.html and author_list.html
 
 ---
+admin
 111I111I1
+---
+testuser
+testuserpassword123
 ---
 
 Step-by-Step Setup Notes
