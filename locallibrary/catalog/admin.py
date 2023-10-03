@@ -36,7 +36,7 @@ class BookAdmin(admin.ModelAdmin):
 class BookInstanceAdmin(admin.ModelAdmin):
     list_filter = ('status', 'due_back')
 
-    list_display = ('book', 'status', 'due_back', 'id')
+    list_display = ('book', 'status', 'borrower', 'due_back', 'id')
 
     # Changes the sections of the view in admin
     fieldsets = (
@@ -44,7 +44,7 @@ class BookInstanceAdmin(admin.ModelAdmin):
             'fields': ('book', 'imprint', 'id')
         }),
         ('Availability', {
-            'fields': ('status', 'due_back')
+            'fields': ('status', 'due_back', 'borrower')
         }),
     )
 
