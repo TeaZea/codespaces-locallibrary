@@ -34,11 +34,9 @@ class BookAdmin(admin.ModelAdmin):
 # Register the Admin classes for BookInstance using the decorator
 @admin.register(BookInstance)
 class BookInstanceAdmin(admin.ModelAdmin):
+    list_display = ('book', 'status', 'borrower', 'due_back', 'id')
     list_filter = ('status', 'due_back')
 
-    list_display = ('book', 'status', 'borrower', 'due_back', 'id')
-
-    # Changes the sections of the view in admin
     fieldsets = (
         (None, {
             'fields': ('book', 'imprint', 'id')
@@ -47,6 +45,7 @@ class BookInstanceAdmin(admin.ModelAdmin):
             'fields': ('status', 'due_back', 'borrower')
         }),
     )
+
 
 admin.site.register(Genre)
 admin.site.register(Language)
