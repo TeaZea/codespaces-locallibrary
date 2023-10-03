@@ -16,7 +16,9 @@ admin
 testuser
 testuserpassword123
 ---
-
+librarian
+librarianpassword123
+---
 Step-by-Step Setup Notes
 
 Install venv (on local machine)

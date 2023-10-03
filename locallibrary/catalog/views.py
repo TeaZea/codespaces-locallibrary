@@ -1,6 +1,8 @@
 from django.shortcuts import render
 from .models import Book, Author, BookInstance, Genre, Language
+from django.views import generic
 from django.contrib.auth.mixins import LoginRequiredMixin
+from django.contrib.auth.mixins import PermissionRequiredMixin
 
 def index(request):
     """View function for home page of site."""
@@ -38,7 +40,6 @@ def index(request):
     # Render the HTML template index.html with the data in the context variable
     return render(request, 'index.html', context=context)
 
-from django.views import generic
 
 class BookListView(generic.ListView):
     model = Book
@@ -65,3 +66,10 @@ class LoanedBooksByUserListView(LoginRequiredMixin,generic.ListView):
             .filter(status__exact='o')
             .order_by('due_back')
         )
+
+# class MyView(PermissionRequiredMixin, View):
+#     permission_required = 'catalog.can_mark_returned'
+#     # Or multiple permissions
+#     permission_required = ('catalog.can_mark_returned', 'catalog.can_edit')
+#     # Note that 'catalog.can_edit' is just an example
+#     # the catalog application doesn't have such permission!
