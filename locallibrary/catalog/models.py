@@ -1,6 +1,9 @@
 from django.db import models
 from django.urls import reverse # Used to generate URLs by reversing the URL patterns
 import uuid # Required for unique book instances
+from django.contrib.auth.models import User
+from datetime import date
+
 
 
 class Genre(models.Model):
@@ -35,7 +38,16 @@ class Book(models.Model):
     # Genre class has already been defined so we can specify the object above.
     genre = models.ManyToManyField(Genre, help_text='Select a genre for this book')
     language = models.ManyToManyField(Language, help_text='Select the language this book was written in')
+    borrower = models.ForeignKey(User, on_delete=models.SET_NULL, null=True, blank=True)
 
+    def __str__(self):
+        """String for representing the Model object."""
+        return self.title
+
+    def get_absolute_url(self):
+        """Returns the URL to access a detail record for this book."""
+        return reverse('book-detail', args=[str(self.id)])
+    
     def display_genre(self):
         """Create a string for the Genre. This is required to display genre in Admin."""
         return ', '.join(genre.name for genre in self.genre.all()[:3])
@@ -48,13 +60,13 @@ class Book(models.Model):
 
     display_language.short_description = 'Language'
 
-    def __str__(self):
-        """String for representing the Model object."""
-        return self.title
+    
+    @property
+    def is_overdue(self):
+        """Determines if the book is overdue based on due date and current date."""
+        return bool(self.due_back and date.today() > self.due_back)
 
-    def get_absolute_url(self):
-        """Returns the URL to access a detail record for this book."""
-        return reverse('book-detail', args=[str(self.id)])
+
 
     
 class BookInstance(models.Model):
