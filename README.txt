@@ -8,6 +8,10 @@ Things I added:
     # Added Genre count on catalog page, index.html
     # Added Language to book_detail.html
     # Added author_detail.html and author_list.html
+    # <strong>Had a lot of trouble with adding authenticated users with permissions.</strong> Mostly because I forgot to add it in admin screen. Created an template for librarians
+        to see all books (not popualted with context yet), filled out the necessary pathways in urls.py. Completed and edited the original example view that would point to the
+        new all_borrowd_books.html, updated models.py as needed, fixed my issue with the nav bar for users with permissions (I did not include the if user.is_staff block)
+        and updated docs.
 
 ---
 admin

@@ -67,9 +67,11 @@ class LoanedBooksByUserListView(LoginRequiredMixin,generic.ListView):
             .order_by('due_back')
         )
 
-# class MyView(PermissionRequiredMixin, View):
-#     permission_required = 'catalog.can_mark_returned'
-#     # Or multiple permissions
-#     permission_required = ('catalog.can_mark_returned', 'catalog.can_edit')
-#     # Note that 'catalog.can_edit' is just an example
-#     # the catalog application doesn't have such permission!
+class MyView(PermissionRequiredMixin,generic.ListView):
+    model = BookInstance
+    permission_required = 'catalog.can_mark_returned'
+    template_name = 'catalog/all_borrowed_books.html'
+    # Or multiple permissions
+    # permission_required = ('catalog.can_mark_returned', 'catalog.can_edit')
+    # Note that 'catalog.can_edit' is just an example
+    # the catalog application doesn't have such permission!
